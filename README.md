@@ -1,4 +1,4 @@
-# Guts 🎫Ticker Notifier 
+# 🎫Guts Ticket Notifier 
 ## 🎫Ticket notifier app that notifies the user when a ticket is available on guts.events
 * 🛠️Build using selenium
 * Every 5 seconds it checks if a ticket is available for a specific day e.g "Friday"
