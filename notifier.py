@@ -1,5 +1,6 @@
 from selenium import webdriver
 import time
+from selenium.webdriver.common.by import By
 
 import smtplib
 from personaldata import *
@@ -20,7 +21,7 @@ def send_email(subject, msg):
         print("Email failed to send.")
 
 # Discord webhook notification
-content = 'Ticket gevonden!'
+content = 'Ticket gevonden! https://guts.events/m3pgrw/f215lz/resale'
 
 webhook = DiscordWebhook(url=discordurl, username="TicketNotifier", content=content)
 
@@ -30,12 +31,12 @@ driver = webdriver.Chrome(PATH)
 driver.get("https://guts.events/m3pgrw/f215lz/resale")
 
 for i in range(100000):
-    time.sleep(5)
+    time.sleep(7)
     page = driver.page_source
     word = "Vrijdag"
     if (word in page) == True:
         print("Ticket found!")
-        send_email('Ticket gevonden!', 'Er is een ticket gevonden voor vrijdag!')
+        #send_email('Ticket gevonden!', 'Er is een ticket gevonden voor vrijdag!')
         response = webhook.execute()
         time.sleep(30)
     else:
